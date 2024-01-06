@@ -4,6 +4,8 @@
 
 L’objectif est de concevoir un tracker GPS pouvant envoyer sa localisation via un serveur Adafruit.
 
+Vidéo du projet : <https://www.tiktok.com/@__hakii__/video/7243024126351248666>
+
 # I- **Conception logicielle**
 
 Nous devons dans un premier temps créer un compte Adafruit puis se rendre sur le site Adafruit IO.
