@@ -8,9 +8,9 @@ Vidéo du projet : <https://www.tiktok.com/@__hakii__/video/7243024126351248666>
 
 # I- **Conception logicielle**
 
-Nous devons dans un premier temps créer un compte Adafruit puis se rendre sur le site Adafruit IO.
+Nous devons dans un premier temps créer un compte Adafruit puis nous rendre sur le site Adafruit IO.
 
-Après avoir créé un nouveau Dashboard, nous mettons en place un feed qui récupèrera les données envoyées par la carte.
+Après avoir créé un nouveau Dashboard, nous mettons en place un feed qui récupérera les données envoyées par la carte.
 
 Dans le Dashboard, nous créons un nouvel objet map où nous lui donnons la valeur 1 afin de l'actualiser en temps réel et nous l’associons au feed créé.
 
@@ -18,9 +18,9 @@ Dans le Dashboard, nous créons un nouvel objet map où nous lui donnons la vale
 
 Pour notre projet, nous avons besoin de deux éléments principaux : une carte pour envoyer des données sans avoir besoin de réseau Wifi et un GPS.
 
-La carte choisie est l’ESP32 Sim800L dont on insèrera une carte Sim avec un forfait (attention cette carte fonctionne en 2G, on doit donc vérifier que l’opérateur utilisé prend encore en compte ce réseau).
+La carte choisie est l’ESP32 Sim800L dont on insérera une carte Sim avec un forfait (attention cette carte fonctionne en 2G, on doit donc vérifier que l’opérateur utilisé prend encore en compte ce réseau).
 
-Le GPS est le Neo-6M. Comme indiqué sur le composant, nous le branchons au 5V, Ground et aux pin Rx Tx de la carte. Nous utiliserons une bibliothèque pour réaliser une communication série sur d'autres broches numériques. Ainsi nous le branchons aux pins GPIO 12 et 14.
+Le GPS est le Neo-6M. Comme indiqué sur le composant, nous le branchons au 5V, Ground et aux pins Rx Tx de la carte. Nous utiliserons une bibliothèque pour réaliser une communication série sur d'autres broches numériques. Ainsi nous le branchons aux pins GPIO 12 et 14.
 
 # III- **Conception informatique**
 
@@ -33,9 +33,7 @@ Pour recevoir les données du GPS, nous utiliserons les bibliothèques `TinyGPS+
 
 Une fois les données récupérées à intervalle régulier dans le *loop*, il nous faut les placer dans un buffer pour pouvoir les envoyer toutes en même vers Adafruit.
 
-Une fois toutes les données utiles reçues, nous les plaçons dans notre tableau, séparé par une virgule.
-
-Attention : Pour que la carte puisse comprendre l’arrivé des données en temps que coordonnées, il faut conserver un certain ordre : vitesse mph, latitude, longitude, altitude.
+Attention : Pour que la carte puisse comprendre l’arrivée des données en tant que coordonnées, il faut conserver un certain ordre : vitesse mph, latitude, longitude, altitude.
 
 Remarque : Pour la première initialisation du GPS, il faut attendre parfois plusieurs minutes avant que le GPS trouve des satellites et commence à clignoter. Il est préférable d’être en extérieur.
 
